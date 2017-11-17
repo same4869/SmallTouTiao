@@ -1,0 +1,5 @@
+编译 app.* 模块： ./gradlew buildBundle -q
+清除 app.* 数据： ./gradlew cleanBundle
+
+编译 lib.* 库： ./gradlew buildLib -q
+清除 lib.* 数据： ./gradlew cleanLib

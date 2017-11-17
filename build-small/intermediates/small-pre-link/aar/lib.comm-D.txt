@@ -1,0 +1,13 @@
+com.android.support:support-core-utils:25.0.0
+com.android.support:support-vector-drawable:25.0.0
+com.android.support:appcompat-v7:25.0.0
+com.android.support:animated-vector-drawable:25.0.0
+com.android.support:support-v4:25.0.0
+com.android.support:support-compat:25.0.0
+com.github.franmontiel:PersistentCookieJar:v1.0.1
+io.reactivex.rxjava2:rxandroid:2.0.1
+com.trello.rxlifecycle2:rxlifecycle-android:2.0.1
+com.trello.rxlifecycle2:rxlifecycle-components:2.0.1
+com.android.support:support-fragment:25.0.0
+com.android.support:support-media-compat:25.0.0
+com.android.support:support-core-ui:25.0.0
