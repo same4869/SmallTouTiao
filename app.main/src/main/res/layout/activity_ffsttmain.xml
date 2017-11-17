@@ -23,9 +23,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_gravity="bottom"
+            android:background="@color/viewBackground"
             app:elevation="16dp"
+            app:itemIconTint="@drawable/nav_item_color_state"
+            app:itemTextColor="@drawable/nav_item_color_state"
             app:layout_behavior="com.xun.smalltoutiao.appmain.widget.BottomNavigationBehavior"
-            app:menu="@menu/bottom_navigation_main" />
+            app:menu="@menu/bottom_navigation_main"/>
 
     </android.support.design.widget.CoordinatorLayout>
 

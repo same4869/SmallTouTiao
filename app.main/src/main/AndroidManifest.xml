@@ -9,10 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
-            android:name=".FFSToutiaoMainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity
             android:name=".FFSTTMainActivity"
             android:label="@string/title_activity_ffsttmain"
             android:theme="@style/AppTheme.NoActionBar">
