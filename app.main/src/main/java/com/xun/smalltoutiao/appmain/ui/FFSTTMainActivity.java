@@ -1,25 +1,38 @@
-package com.xun.smalltoutiao.appmain;
+package com.xun.smalltoutiao.appmain.ui;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Toast;
 
+import com.xun.smalltoutiao.appmain.R;
+import com.xun.smalltoutiao.appmain.fragment.PlaceholderFragment;
+
+import net.wequick.small.Small;
+
 public class FFSTTMainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private BottomNavigationView bottom_navigation;
+    private static final int FRAGMENT_NEWS = 0;
+    private static final int FRAGMENT_PHOTO = 1;
+    private static final int FRAGMENT_VIDEO = 2;
+    private static final int FRAGMENT_MEDIA = 3;
+
+    private BottomNavigationView bottomNavigation;
+    private Toolbar toolbar;
+    private Fragment curFragment;
+
+    private int position;
+    private static String[] sUris = new String[]{"newsTabFragment", "photoTabFragment", "videoTabFragment", "mediaChannelTabFragment"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +48,7 @@ public class FFSTTMainActivity extends AppCompatActivity
     }
 
     private void initView() {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -47,22 +60,26 @@ public class FFSTTMainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        bottom_navigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
-        bottom_navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigation = (BottomNavigationView) findViewById(R.id.bottom_navigation);
+        bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_news:
                         Toast.makeText(getApplicationContext(), "新闻", Toast.LENGTH_SHORT).show();
+                        showFragment(0);
                         break;
                     case R.id.action_photo:
                         Toast.makeText(getApplicationContext(), "图片", Toast.LENGTH_SHORT).show();
+                        showFragment(1);
                         break;
                     case R.id.action_video:
                         Toast.makeText(getApplicationContext(), "视频", Toast.LENGTH_SHORT).show();
+                        showFragment(2);
                         break;
                     case R.id.action_media:
                         Toast.makeText(getApplicationContext(), "头条号", Toast.LENGTH_SHORT).show();
+                        showFragment(3);
                         break;
                     default:
                         break;
@@ -70,6 +87,52 @@ public class FFSTTMainActivity extends AppCompatActivity
                 return true;
             }
         });
+        showFragment(0);
+    }
+
+    private void showFragment(int index) {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        if (curFragment != null) {
+            ft.hide(curFragment);
+        }
+        position = index;
+        switch (index) {
+            case FRAGMENT_NEWS:
+                toolbar.setTitle(R.string.app_name);
+                /**
+                 * 如果Fragment为空，就新建一个实例
+                 * 如果不为空，就将它从栈中显示出来
+                 */
+//                if (newsTabLayout == null) {
+//                    newsTabLayout = NewsTabLayout.getInstance();
+//                    ft.add(R.id.container, newsTabLayout, NewsTabLayout.class.getName());
+//                } else {
+//                    ft.show(newsTabLayout);
+//                }
+                break;
+
+            case FRAGMENT_PHOTO:
+                toolbar.setTitle(R.string.title_photo);
+                break;
+
+            case FRAGMENT_VIDEO:
+                toolbar.setTitle(getString(R.string.title_video));
+                break;
+
+            case FRAGMENT_MEDIA:
+                toolbar.setTitle(getString(R.string.title_media));
+                break;
+
+            default:
+                break;
+        }
+
+        curFragment = Small.createObject("fragment-v4", sUris[position], FFSTTMainActivity.this);
+        if (curFragment == null) {
+            curFragment = PlaceholderFragment.newInstance(sUris[position]);
+        }
+        ft.add(R.id.container, curFragment, sUris[position]);
+        ft.commit();
     }
 
     @Override
