@@ -4,6 +4,10 @@
     {
       "uri": "main",
       "pkg": "com.xun.smalltoutiao.appmain"
+    },
+    {
+      "uri": "news",
+      "pkg": "com.xun.smalltoutiao.appnews"
     }
   ]
 }

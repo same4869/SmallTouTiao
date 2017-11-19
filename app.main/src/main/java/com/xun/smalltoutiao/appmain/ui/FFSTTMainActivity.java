@@ -32,7 +32,7 @@ public class FFSTTMainActivity extends AppCompatActivity
     private Fragment curFragment;
 
     private int position;
-    private static String[] sUris = new String[]{"newsTabFragment", "photoTabFragment", "videoTabFragment", "mediaChannelTabFragment"};
+    private static String[] sUris = new String[]{"news", "photoTabFragment", "videoTabFragment", "mediaChannelTabFragment"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
