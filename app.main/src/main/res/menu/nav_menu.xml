@@ -23,6 +23,10 @@
             android:id="@+id/nav_share"
             android:icon="@drawable/ic_share_grey_24dp"
             android:title="@string/nav_share"/>
+        <item
+            android:id="@+id/test_plugin"
+            android:icon="@drawable/ic_share_grey_24dp"
+            android:title="@string/test_plugin"/>
     </group>
 
 </menu>

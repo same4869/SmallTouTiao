@@ -1,5 +1,6 @@
 package com.xun.smalltoutiao.appmain.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import com.xun.smalltoutiao.appmain.R;
 import com.xun.smalltoutiao.appmain.fragment.PlaceholderFragment;
+import com.xun.smalltoutiao.appmain.service.SmallService;
 
 import net.wequick.small.Small;
 
@@ -141,6 +143,9 @@ public class FFSTTMainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
+            Intent intent = new Intent(this, SmallService.class);
+            intent.putExtra("small", SmallService.SMALL_UPDATE_BUNDLES);
+            startService(intent);
             super.onBackPressed();
         }
     }
@@ -157,10 +162,15 @@ public class FFSTTMainActivity extends AppCompatActivity
             Toast.makeText(getApplicationContext(), "切换主题", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_setting) {
             Toast.makeText(getApplicationContext(), "设置", Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.test_plugin) {
+            Intent intent1 = new Intent(this, SmallService.class);
+            intent1.putExtra("small", SmallService.SMALL_CHECK_UPDATE);
+            startService(intent1);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

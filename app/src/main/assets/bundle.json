@@ -3,11 +3,18 @@
   "bundles": [
     {
       "uri": "main",
-      "pkg": "com.xun.smalltoutiao.appmain"
+      "pkg": "com.xun.smalltoutiao.appmain",
+      "rules": {
+        "ffsttmain": ".ui.FFSTTMainActivity"
+      }
     },
     {
       "uri": "news",
       "pkg": "com.xun.smalltoutiao.appnews"
+    },
+    {
+      "uri": "lib.comm",
+      "pkg": "com.xun.smalltoutiao.libcomm"
     }
   ]
 }

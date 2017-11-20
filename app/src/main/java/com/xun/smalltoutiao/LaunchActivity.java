@@ -15,7 +15,7 @@ public class LaunchActivity extends AppCompatActivity {
         Small.setUp(this, new Small.OnCompleteListener() {
             @Override
             public void onComplete() {
-                Small.openUri("main", LaunchActivity.this);
+                Small.openUri("main/ffsttmain", LaunchActivity.this);
                 finish();
             }
         });

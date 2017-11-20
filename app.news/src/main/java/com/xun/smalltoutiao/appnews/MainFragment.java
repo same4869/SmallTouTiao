@@ -7,8 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.xun.smalltoutiao.appnews.R;
-
 /**
  * Created by xunwang on 2017/11/19.
  */

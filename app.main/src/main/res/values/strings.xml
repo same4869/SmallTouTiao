@@ -13,6 +13,7 @@
     <string name="nav_switch_night_mode">切换主题</string>
     <string name="nav_setting">设置</string>
     <string name="nav_share">分享</string>
+    <string name="test_plugin">测试插件</string>
     <string name="title_activity_ffsttmain">FFSTTMainActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

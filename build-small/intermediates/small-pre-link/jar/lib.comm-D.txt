@@ -1,11 +1,12 @@
+io.reactivex.rxjava2:rxjava:2.1.0
+org.reactivestreams:reactive-streams:1.0.0
+com.trello.rxlifecycle2:rxlifecycle:2.0.1
+com.alibaba:fastjson:1.2.41
+com.google.code.findbugs:jsr305:3.0.1
 com.squareup.retrofit2:retrofit:2.3.0
 com.squareup.okhttp3:okhttp:3.9.0
 com.squareup.okhttp3:logging-interceptor:3.9.0
 com.google.code.gson:gson:2.7
-io.reactivex.rxjava2:rxjava:2.1.0
 com.squareup.retrofit2:converter-gson:2.3.0
-org.reactivestreams:reactive-streams:1.0.0
-com.trello.rxlifecycle2:rxlifecycle:2.0.1
 com.squareup.okio:okio:1.13.0
 com.squareup.retrofit2:adapter-rxjava2:2.3.0
-com.google.code.findbugs:jsr305:3.0.1
