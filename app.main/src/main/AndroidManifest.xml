@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
         <activity
-            android:name=".ui.FFSTTMainActivity"
+            android:name=".ui.MainFFSTTMainActivity"
             android:label="@string/title_activity_ffsttmain"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

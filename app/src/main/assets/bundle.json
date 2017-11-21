@@ -5,16 +5,23 @@
       "uri": "main",
       "pkg": "com.xun.smalltoutiao.appmain",
       "rules": {
-        "ffsttmain": ".ui.FFSTTMainActivity"
+        "ffsttmain": ".ui.MainFFSTTMainActivity"
       }
     },
     {
       "uri": "news",
-      "pkg": "com.xun.smalltoutiao.appnews"
+      "pkg": "com.xun.smalltoutiao.appnews",
+      "rules": {
+        "newsMain": ".fragment.NewsTabFragment"
+      }
     },
     {
       "uri": "lib.comm",
       "pkg": "com.xun.smalltoutiao.libcomm"
+    },
+    {
+      "uri": "lib.style",
+      "pkg": "com.xun.smalltoutiao.libstyle"
     }
   ]
 }

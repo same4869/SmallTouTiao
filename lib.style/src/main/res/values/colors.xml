@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="gray">#9cffffff</color>
+    <color name="Grey900">#212121</color>
+
+    <color name="windowBackground">@color/Grey900</color>
+</resources>

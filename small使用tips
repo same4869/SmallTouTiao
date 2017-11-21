@@ -3,3 +3,6 @@
 
 编译 lib.* 库： ./gradlew buildLib -q
 清除 lib.* 数据： ./gradlew cleanLib
+
+更新插件参考 http://test-1251839428.cossh.myqcloud.com/plugin_main_1.0.1_update.json
+新增插件参考 http://test-1251839428.cossh.myqcloud.com/plugin_main_1.1.1_update.json

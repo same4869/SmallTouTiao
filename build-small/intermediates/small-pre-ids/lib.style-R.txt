@@ -42,13 +42,7 @@ int attr layout_goneMarginRight 0x79010028
 int attr layout_goneMarginStart 0x79010029
 int attr layout_goneMarginTop 0x7901002a
 int attr layout_optimizationLevel 0x7901002b
-int id parent 0x79020000
-int id spread 0x79020001
-int id wrap 0x79020002
-int id packed 0x79020003
-int id spread_inside 0x79020004
-int id basic 0x79020005
-int id chains 0x79020006
+int drawable style_ic_add_white_24dp 0x79020000
 int dimen dp1 0x79030000
 int dimen dp10 0x79030001
 int dimen dp100 0x79030002
@@ -1354,6 +1348,18 @@ int dimen sp96 0x79030515
 int dimen sp97 0x79030516
 int dimen sp98 0x79030517
 int dimen sp99 0x79030518
+int style AppTheme_AppBarOverlay 0x79040000
+int style TabLayout 0x79040001
+int color Grey900 0x79050000
+int color gray 0x79050001
+int color windowBackground 0x79050002
+int id parent 0x79060000
+int id spread 0x79060001
+int id wrap 0x79060002
+int id packed 0x79060003
+int id spread_inside 0x79060004
+int id basic 0x79060005
+int id chains 0x79060006
 int[] styleable ConstraintLayout_Layout { 0x010100c4, 0x0101011f, 0x01010120, 0x0101013f, 0x01010140, 0x79010000, 0x79010001, 0x79010002, 0x79010003, 0x79010004, 0x79010005, 0x79010006, 0x79010007, 0x79010008, 0x79010009, 0x7901000a, 0x7901000b, 0x7901000c, 0x7901000d, 0x7901000e, 0x7901000f, 0x79010010, 0x79010011, 0x79010012, 0x79010013, 0x79010014, 0x79010015, 0x79010016, 0x79010017, 0x79010018, 0x79010019, 0x7901001a, 0x7901001b, 0x7901001c, 0x7901001d, 0x7901001e, 0x7901001f, 0x79010020, 0x79010021, 0x79010022, 0x79010023, 0x79010024, 0x79010025, 0x79010026, 0x79010027, 0x79010028, 0x79010029, 0x7901002a, 0x7901002b }
 int styleable ConstraintLayout_Layout_android_maxHeight 2
 int styleable ConstraintLayout_Layout_android_maxWidth 1

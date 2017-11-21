@@ -47,7 +47,7 @@
             </intent-filter>
         </activity>
         <!-- Small IntentService -->
-        <service android:name="com.xun.smalltoutiao.appmain.service.SmallService" />
+        <service android:name="com.xun.smalltoutiao.appmain.service.MainSmallService" />
     </application>
 
 </manifest>
