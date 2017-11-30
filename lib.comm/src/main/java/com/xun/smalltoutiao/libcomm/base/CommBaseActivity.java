@@ -1,5 +1,7 @@
 package com.xun.smalltoutiao.libcomm.base;
 
+import android.content.Context;
+
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 /**
@@ -7,4 +9,9 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
  */
 
 public class CommBaseActivity extends RxAppCompatActivity{
+    protected static Context context;
+
+    public static Context getAppContext() {
+        return context;
+    }
 }

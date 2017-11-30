@@ -35,7 +35,7 @@
             android:paddingRight="10dp"
             android:paddingTop="4dp"
             android:scaleType="center"
-            app:srcCompat="@drawable/style_ic_add_white_24dp"
+            app:srcCompat="@drawable/comm_ic_add_white_24dp"
             tools:ignore="ContentDescription" />
     </LinearLayout>
 

@@ -12,7 +12,7 @@
       "uri": "news",
       "pkg": "com.xun.smalltoutiao.appnews",
       "rules": {
-        "newsMain": ".fragment.NewsTabFragment"
+        "newsMain": ".fragment.NewsJokeContentFragment"
       }
     },
     {

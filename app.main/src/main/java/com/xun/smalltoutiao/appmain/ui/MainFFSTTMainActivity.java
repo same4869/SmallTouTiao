@@ -1,5 +1,6 @@
 package com.xun.smalltoutiao.appmain.ui;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -19,10 +20,11 @@ import android.widget.Toast;
 import com.xun.smalltoutiao.appmain.R;
 import com.xun.smalltoutiao.appmain.fragment.MainPlaceholderFragment;
 import com.xun.smalltoutiao.appmain.service.MainSmallService;
+import com.xun.smalltoutiao.libcomm.base.CommBaseActivity;
 
 import net.wequick.small.Small;
 
-public class MainFFSTTMainActivity extends AppCompatActivity
+public class MainFFSTTMainActivity extends CommBaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static final int FRAGMENT_NEWS = 0;
     private static final int FRAGMENT_PHOTO = 1;
@@ -40,6 +42,7 @@ public class MainFFSTTMainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        context = getApplicationContext();
         //设置无标题
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 

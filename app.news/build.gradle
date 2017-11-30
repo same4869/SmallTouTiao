@@ -26,4 +26,26 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':lib.comm')
+
+    // retrofit 2
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    // 持久化 Cookie
+    compile 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+    // RxJava 2
+    compile 'io.reactivex.rxjava2:rxjava:2.1.0'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    // RxLifecycle
+    compile 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
+    compile 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
+    // okhttp 3
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    //fastjson
+    compile 'com.alibaba:fastjson:1.2.41'
+    // 简化版 Adapter
+    compile 'me.drakeet.multitype:multitype:3.3.3'
+    // 图片加载
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 }
