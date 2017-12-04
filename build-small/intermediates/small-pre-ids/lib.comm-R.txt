@@ -61,12 +61,16 @@ int drawable comm_ic_add_white_24dp 0x17020000
 int drawable comm_ic_dislike_gray_24dp 0x17020001
 int drawable comm_ic_dots_horizontal_grey500_24dp 0x17020002
 int drawable comm_ic_like_gray_24dp 0x17020003
+int drawable comm_ic_share_white_24dp 0x17020004
 int layout comm_fragment_list 0x17030000
 int layout comm_item_loading 0x17030001
 int layout comm_item_loading_end 0x17030002
+int layout comm_fragment_list_toolbar 0x17030003
+int layout comm_toolbar 0x17030004
 int string loading 0x17040000
 int string network_error 0x17040001
 int string no_more_content 0x17040002
+int string share_to 0x17040003
 int dimen cardview_compat_inset_shadow 0x17050000
 int dimen cardview_default_elevation 0x17050001
 int dimen cardview_default_radius 0x17050002
@@ -76,6 +80,7 @@ int style Base_CardView 0x17060002
 int style CardView_Dark 0x17060003
 int style CardView_Light 0x17060004
 int style TabLayout 0x17060005
+int style AppTheme_PopupOverlay 0x17060006
 int color Amber 0x17070000
 int color Black 0x17070001
 int color Blue 0x17070002
@@ -134,6 +139,8 @@ int id chains 0x17080006
 int id refresh_layout 0x17080007
 int id recycler_view 0x17080008
 int id progress_footer 0x17080009
+int id AppBarLayout01 0x1708000a
+int id toolbar 0x1708000b
 int[] styleable CardView { 0x0101013f, 0x01010140, 0x1701002c, 0x1701002d, 0x1701002e, 0x1701002f, 0x17010030, 0x17010031, 0x17010032, 0x17010033, 0x17010034, 0x17010035, 0x17010036 }
 int styleable CardView_android_minHeight 1
 int styleable CardView_android_minWidth 0

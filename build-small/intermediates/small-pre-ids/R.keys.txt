@@ -2018,12 +2018,16 @@ int drawable comm_ic_add_white_24dp
 int drawable comm_ic_dislike_gray_24dp
 int drawable comm_ic_dots_horizontal_grey500_24dp
 int drawable comm_ic_like_gray_24dp
+int drawable comm_ic_share_white_24dp
 int layout comm_fragment_list
 int layout comm_item_loading
 int layout comm_item_loading_end
+int layout comm_fragment_list_toolbar
+int layout comm_toolbar
 int string loading
 int string network_error
 int string no_more_content
+int string share_to
 int dimen cardview_compat_inset_shadow
 int dimen cardview_default_elevation
 int dimen cardview_default_radius
@@ -2033,6 +2037,7 @@ int style Base_CardView
 int style CardView_Dark
 int style CardView_Light
 int style TabLayout
+int style AppTheme_PopupOverlay
 int color Amber
 int color Black
 int color Blue
@@ -2091,6 +2096,8 @@ int id chains
 int id refresh_layout
 int id recycler_view
 int id progress_footer
+int id AppBarLayout01
+int id toolbar
 int[] styleable CardView
 int styleable CardView_android_minHeight
 int styleable CardView_android_minWidth

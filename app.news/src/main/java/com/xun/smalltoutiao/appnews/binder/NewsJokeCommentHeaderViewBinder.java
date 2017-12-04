@@ -5,39 +5,31 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
-import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.jakewharton.rxbinding2.view.RxView;
 import com.xun.smalltoutiao.appnews.R;
 import com.xun.smalltoutiao.appnews.bean.NewsJokeContentBean;
-import com.xun.smalltoutiao.appnews.ui.NewsJokeCommentActivity;
+import com.xun.smalltoutiao.libcomm.base.CommBaseActivity;
 import com.xun.smalltoutiao.libcomm.utils.CommErrorAction;
 import com.xun.smalltoutiao.libcomm.utils.CommImageLoader;
+import com.xun.smalltoutiao.libcomm.views.CommBottomSheetDialogFixed;
 import com.xun.smalltoutiao.libcomm.views.CommCircleImageView;
 
-import java.util.concurrent.TimeUnit;
-
-import io.reactivex.functions.Consumer;
 import me.drakeet.multitype.ItemViewBinder;
 
 /**
- * Created by xunwang on 2017/11/30.
+ * Created by xunwang on 2017/12/4.
  */
 
-public class NewsJokeContentViewBinder extends ItemViewBinder<NewsJokeContentBean.DataBean.GroupBean, NewsJokeContentViewBinder.ViewHolder> {
-
+public class NewsJokeCommentHeaderViewBinder extends ItemViewBinder<NewsJokeContentBean.DataBean.GroupBean, NewsJokeCommentHeaderViewBinder.ViewHolder> {
     @NonNull
     @Override
-    protected NewsJokeContentViewBinder.ViewHolder onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
+    protected NewsJokeCommentHeaderViewBinder.ViewHolder onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
         View view = inflater.inflate(R.layout.news_item_joke_content, parent, false);
         return new ViewHolder(view);
     }
@@ -65,40 +57,34 @@ public class NewsJokeContentViewBinder extends ItemViewBinder<NewsJokeContentBea
             } else {
                 holder.tv_comment_count.setVisibility(View.GONE);
             }
+            holder.iv_dots.setVisibility(View.GONE);
 
-            RxView.clicks(holder.itemView)
-                    .throttleFirst(1, TimeUnit.SECONDS)
-                    .subscribe(new Consumer<Object>() {
-                        @Override
-                        public void accept(@io.reactivex.annotations.NonNull Object o) throws Exception {
-                            Log.d("kkkkkkkk", "joke item click");
-                            NewsJokeCommentActivity.launch(item);
-                        }
-                    });
-
-            holder.iv_dots.setOnClickListener(new View.OnClickListener() {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    PopupMenu popupMenu = new PopupMenu(context,
-                            holder.iv_dots, Gravity.END, 0, R.style.MyPopupMenu);
-                    popupMenu.inflate(R.menu.menu_joke_content);
-                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                        @Override
-                        public boolean onMenuItemClick(MenuItem menu) {
-                            int itemId = menu.getItemId();
-                            if (itemId == R.id.action_copy) {
-                                ClipboardManager copy = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
-                                ClipData clipData = ClipData.newPlainText("text", item.getText());
-                                copy.setPrimaryClip(clipData);
-                                Snackbar.make(holder.itemView, R.string.copied_to_clipboard, Snackbar.LENGTH_SHORT).show();
-                            }
-                            if (itemId == R.id.action_comment_share) {
-//                                IntentAction.send(context, item.getText());
-                            }
-                            return false;
-                        }
-                    });
-                    popupMenu.show();
+                public void onClick(View v) {
+                    final String content = item.getText();
+                    final CommBottomSheetDialogFixed dialog = new CommBottomSheetDialogFixed(context);
+                    dialog.setOwnerActivity((CommBaseActivity) context);
+//                    View view = ((CommBaseActivity) context).getLayoutInflater().inflate(R.layout.item_comment_action_sheet, null);
+//                    view.findViewById(R.id.layout_copy_text).setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+//                            ClipboardManager copy = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+//                            ClipData clipData = ClipData.newPlainText("text", content);
+//                            copy.setPrimaryClip(clipData);
+//                            Snackbar.make(holder.itemView, R.string.copied_to_clipboard, Snackbar.LENGTH_SHORT).show();
+//                            dialog.dismiss();
+//                        }
+//                    });
+//                    view.findViewById(R.id.layout_share_text).setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+//                            IntentAction.send(context, content);
+//                            dialog.dismiss();
+//                        }
+//                    });
+//                    dialog.setContentView(view);
+                    dialog.show();
                 }
             });
         } catch (Exception e) {

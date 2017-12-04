@@ -28,7 +28,7 @@ public abstract class CommLazyLoadFragment<T extends CommIBasePresenter> extends
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
-        Log.d("kkkkkkkk","isVisibleToUser --> " + isVisibleToUser);
+        Log.d("kkkkkkkk", "isVisibleToUser --> " + isVisibleToUser);
         super.setUserVisibleHint(isVisibleToUser);
         this.isVisibleToUser = isVisibleToUser;
         prepareFetchData();
@@ -42,7 +42,7 @@ public abstract class CommLazyLoadFragment<T extends CommIBasePresenter> extends
 
     public boolean prepareFetchData(boolean forceUpdate) {
         Log.d("kkkkkkkk", "isVisibleToUser --> " + isVisibleToUser + " isViewInitiated --> " + isViewInitiated + " isDataInitiated --> " + isDataInitiated + " forceUpdate -->" + forceUpdate);
-        if (isVisibleToUser && isViewInitiated && (!isDataInitiated || forceUpdate)) {
+        if (/*isVisibleToUser &&*/ isViewInitiated && (!isDataInitiated || forceUpdate)) {
             fetchData();
             isDataInitiated = true;
             return true;

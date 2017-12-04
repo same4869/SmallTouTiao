@@ -1,7 +1,9 @@
 package com.xun.smalltoutiao.appnews.api;
 
 
+import com.xun.smalltoutiao.appnews.bean.NewsJokeCommentBean;
 import com.xun.smalltoutiao.appnews.bean.NewsJokeContentBean;
+import com.xun.smalltoutiao.libcomm.config.Constants;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -23,13 +25,13 @@ public interface NewsIJokeApi {
             @Query("as") String as,
             @Query("cp") String cp);
 
-//    /**
-//     * 获取段子评论
-//     * http://m.neihanshequ.com/api/get_essay_comments/?group_id=编号&count=数量&offset=偏移量
-//     */
-//    @GET("http://m.neihanshequ.com/api/get_essay_comments/?count=20")
-//    @Headers({"User-Agent:" + Constant.USER_AGENT_MOBILE})
-//    Observable<JokeCommentBean> getJokeComment(
-//            @Query("group_id") String groupId,
-//            @Query("offset") int offset);
+    /**
+     * 获取段子评论
+     * http://m.neihanshequ.com/api/get_essay_comments/?group_id=编号&count=数量&offset=偏移量
+     */
+    @GET("http://m.neihanshequ.com/api/get_essay_comments/?count=20")
+    @Headers({"User-Agent:" + Constants.USER_AGENT_MOBILE})
+    Observable<NewsJokeCommentBean> getJokeComment(
+            @Query("group_id") String groupId,
+            @Query("offset") int offset);
 }

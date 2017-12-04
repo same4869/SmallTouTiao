@@ -3,6 +3,7 @@ package com.xun.smalltoutiao.appnews.utils;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 
+import com.xun.smalltoutiao.appnews.bean.NewsJokeCommentBean;
 import com.xun.smalltoutiao.appnews.bean.NewsJokeContentBean;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
 public class NewsDiffCallback extends DiffUtil.Callback {
 
     public static final int JOKE = 1;
+    public static final int JOKE_COMMENT = 6;
     private List oldList, newList;
     private int type;
 
@@ -46,6 +48,9 @@ public class NewsDiffCallback extends DiffUtil.Callback {
                 case JOKE:
                     return ((NewsJokeContentBean.DataBean.GroupBean) oldList.get(oldItemPosition)).getContent().equals(
                             ((NewsJokeContentBean.DataBean.GroupBean) newList.get(newItemPosition)).getContent());
+                case JOKE_COMMENT:
+                    return ((NewsJokeCommentBean.DataBean.RecentCommentsBean) oldList.get(oldItemPosition)).getText().equals(
+                            ((NewsJokeCommentBean.DataBean.RecentCommentsBean) newList.get(newItemPosition)).getText());
             }
         } catch (Exception e) {
 //            ErrorAction.print(e);
@@ -60,6 +65,9 @@ public class NewsDiffCallback extends DiffUtil.Callback {
                 case JOKE:
                     return ((NewsJokeContentBean.DataBean.GroupBean) oldList.get(oldItemPosition)).getShare_url().equals(
                             ((NewsJokeContentBean.DataBean.GroupBean) newList.get(newItemPosition)).getShare_url());
+                case JOKE_COMMENT:
+                    return ((NewsJokeCommentBean.DataBean.RecentCommentsBean) oldList.get(oldItemPosition)).getId() ==
+                            ((NewsJokeCommentBean.DataBean.RecentCommentsBean) newList.get(newItemPosition)).getId();
             }
         } catch (Exception e) {
 //            ErrorAction.print(e);
